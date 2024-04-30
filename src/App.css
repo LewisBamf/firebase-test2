@@ -1,3 +1,9 @@
 body {
   background-color: var(--background);
+  font: 16px/1.5 'Poppins', Arial, sans-serif;
+  color: var(--primary);
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
+
