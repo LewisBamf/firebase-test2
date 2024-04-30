@@ -22,12 +22,33 @@ const Login = () => {
             });
     };
 
+    const handleLogout = () => {
+        firebase.auth().signOut()
+            .then(() => {
+                setUserName(null);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    };
+
     return (
         <div>
-            <h1>Hello {userName}</h1>
+            {userName ? (
+        <div>
+            <h1>Login</h1>
             <button onClick={handleGoogleLogin}>Login with Google</button>
         </div>
-    );
+
+            ) : (
+                <div>
+                    <h1>Hello {userName}</h1>
+                    <button onClick={handleLogout}>signOut</button>
+                </div>
+            )}
+
+        </div>
+);
 };
 
 export default Login;
